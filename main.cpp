@@ -1,11 +1,13 @@
 #include "application.h"
 #include <QApplication>
-#include <QIcon>
+#include <stock.h>
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    Application w;
-    w.show();
+    Book x("nazwa","Tolkien");
+    x.addStock();
+    Application window;
+    window.show();
     return app.exec();
 }

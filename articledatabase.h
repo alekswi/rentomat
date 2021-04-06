@@ -10,10 +10,14 @@ class ArticleDatabase
 {
 public:
     ArticleDatabase();
+
+signals:
+    void ta();
+
 private:
-    QVector <Book> booksDatabase;
-    QVector <Game> gamesDatabase;
-    QVector <Movie> moviesDatabase;
+    QVector <Book> books;
+    QVector <Game> games;
+    QVector <Movie> movies;
 };
 
 #endif // ARTICLEDATABASE_H

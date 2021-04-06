@@ -13,6 +13,7 @@ SOURCES += \
     article.cpp \
     articledatabase.cpp \
     book.cpp \
+    deletedialog.cpp \
     game.cpp \
     main.cpp \
     movie.cpp \
@@ -26,6 +27,7 @@ HEADERS += \
     article.h \
     articledatabase.h \
     book.h \
+    deletedialog.h \
     game.h \
     movie.h \
     stock.h \
@@ -34,7 +36,8 @@ HEADERS += \
     userdatabase.h
 
 FORMS += \
-    application.ui
+    application.ui \
+    deletedialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

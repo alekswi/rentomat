@@ -4,7 +4,7 @@
 #include <QApplication>
 #include <stock.h>
 
-class Article
+class Article : public QObject
 {
 public:
     Article();
@@ -17,7 +17,7 @@ protected:
     int year;
     int month;
     int day;
-    QVector <Stock> stock;
+    QVector<Stock> stock;
 };
 
 #endif // ARTICLE_H

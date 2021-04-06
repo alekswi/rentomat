@@ -7,20 +7,28 @@
 class User
 {
 public:
-    User(QString x, QString y);
+    User(QString username, QString password);
+    User();
     ///Compares usernames
-    bool compare(QString username);
+    bool compareUsername(QString username);
+    ///Compares passwords
+    bool comparePassword(QString password);
     ///Sets/Updates username
     bool setUsername(QString username);
     ///Sets/Updates password
     bool setPassword(QString password);
+    ///Returns username
+    QString getUsername();
+    ///Returns password
+    QString getPassword();
     ///Prints informations od User to stream
     QString printUser();
-    ///Read user from file
-    void readUser(QFile file);
+    ///Read user from stream
+    void loadUser(QString userString);
 protected:
     QString username;
     QString password;
+    static int nextID;
     int id;
     bool admin;
     QVector<std::pair<int,int>> borrowedBooksID;
