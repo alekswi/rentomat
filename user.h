@@ -2,7 +2,7 @@
 #define USER_H
 
 #include <QApplication>
-#include "Watched.h"
+#include "watched.h"
 
 class User
 {
