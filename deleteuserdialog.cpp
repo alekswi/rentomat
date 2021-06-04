@@ -1,38 +1,40 @@
-#include "deletedialog.h"
-#include "ui_deletedialog.h"
+#include "deleteuserdialog.h"
+#include "ui_deleteuserdialog.h"
 #include <QMessageBox>
 
-DeleteDialog::DeleteDialog(QWidget *parent) :
+DeleteUserDialog::DeleteUserDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::DeleteDialog)
+    ui(new Ui::DeleteUserDialog)
 {
     ui->setupUi(this);
     setWindowIcon(QIcon(":/img/logo.ico"));
+    setFixedSize(size());
     check = false;
 }
 
-DeleteDialog::~DeleteDialog()
+DeleteUserDialog::~DeleteUserDialog()
 {
     delete ui;
 }
 
-void DeleteDialog::setUser(QString username, QString password)
+void DeleteUserDialog::setUser(QString username, QString password)
 {
     this->username = username;
     setWindowTitle("Delete " + username);
     this->password = password;
 }
 
-bool DeleteDialog::ifDeleted()
+bool DeleteUserDialog::ifDeleted()
 {
     return check;
 }
 
-void DeleteDialog::on_Delete_clicked()
+void DeleteUserDialog::on_Delete_clicked()
 {
     if(ui->passwordLabel->text()==password)
     {
         check = true;
+        ui->passwordLabel->setText("");
         this->close();
     }
     else
@@ -41,7 +43,7 @@ void DeleteDialog::on_Delete_clicked()
     }
 }
 
-void DeleteDialog::on_Cancel_clicked()
+void DeleteUserDialog::on_Cancel_clicked()
 {
     this->close();
 }

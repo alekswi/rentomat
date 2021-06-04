@@ -7,14 +7,21 @@
 class Movie: public Article
 {
 public:
-    Movie(QString name, QString producer);
+    Movie();
     bool compare(QString name);
+    bool compare(QString name, QString category, int releaseFrom, int releaseTo, int durationFrom, int durationTo);
+    QString getProducer();
+    QString getProductionCompany();
+    int getDuration();
+    void setID(int id);
+    QString printMovie();
+    void loadMovie(QString movieString);
 protected:
     QString producer;
-    QString director;
     QString productionCompany;
     int duration;
-    double budget;
+    static int nextID;
+    friend class AddMovieDialog;
 };
 
 #endif // MOVIE_H

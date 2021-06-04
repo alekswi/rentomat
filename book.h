@@ -2,20 +2,25 @@
 #define BOOK_H
 
 #include <QApplication>
-#include <article.h>
+#include "article.h"
 
 class Book: public Article
 {
 public:
-    Book(QString name, QString author);
+    Book();
+    ~Book();
     bool compare(QString name);
+    bool compare(QString name, QString author, QString category, int releaseFrom, int releaseTo);
+    QString getAuthor();
+    int getPages();
+    void setID(int id);
     QString printBook();
-    void addStock();
-    void loadBook(QString userString);
+    void loadBook(QString gameString);
 protected:
     QString author;
     static int nextID;
     int pages;
+    friend class AddBookDialog;
 };
 
 #endif // BOOK_H

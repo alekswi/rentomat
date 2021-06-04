@@ -2,6 +2,7 @@
 #define USERDATABASE_H
 
 #include<QApplication>
+#include<QFile>
 #include<user.h>
 
 class UserDatabase
@@ -14,14 +15,15 @@ public:
     void saveDatabase();
     ///Adds user to database
     void addUser(QString username, QString password);
-    ///Returns pos of user whit given username, if it doesn't exist returns 0
+    ///Returns pos of user with given username, if it doesn't exist returns -1
     int findUser(QString username);
     ///Returns true if logged
     User *returnUser(QString username, QString password);
     ///Deletes user from database
     void deleteUser(QString username);
 private:
-    QVector<User> users;
+    QVector<User*> users;
+    QVector<int> unusedID;
 };
 
 #endif // USERDATABASE_H

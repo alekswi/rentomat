@@ -6,18 +6,28 @@
 class Stock
 {
 public:
-    //template<typename type> Stock(type *x);
-    Stock(QString type);
+    Stock();
+    Stock(QString type, QString locationIn);
+    ~Stock();
+    ///Sets stock to borrowed and which student borrowed it
     void borrow(int studentID);
+    void returnStock();
+    QString getLocation();
+    int getID();
+    bool ifBorrowed();
+    int getStudentID();
+    ///Prints information about stock
     QString printStock();
-    void loadStock(QString stockString);
+    ///Loads information about stock
+    void loadStock(QString stockString, int type);
 private:
-    static int nextBookID;
-    static int nextGameID;
-    static int nextMovieID;
+    QString location;
     int id;
     bool borrowed;
     int studentID;
+    static int nextBookID;
+    static int nextGameID;
+    static int nextMovieID;
 };
 
 #endif // STOCK_H

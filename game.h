@@ -7,11 +7,19 @@
 class Game: public Article
 {
 public:
-    Game(QString name, QString producer, QString publisher);
+    Game();
     bool compare(QString name);
+    bool compare(QString name, QString category, int releaseFrom, int releaseTo);
+    QString getProducer();
+    QString getPublisher();
+    void setID(int id);
+    QString printGame();
+    void loadGame(QString gameString);
 protected:
     QString producer;
     QString publisher;
+    static int nextID;
+    friend class AddGameDialog;
 };
 
 #endif // GAME_H

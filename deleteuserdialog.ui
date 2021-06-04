@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DeleteDialog</class>
- <widget class="QDialog" name="DeleteDialog">
+ <class>DeleteUserDialog</class>
+ <widget class="QDialog" name="DeleteUserDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
+    <width>290</width>
     <height>130</height>
    </rect>
   </property>
